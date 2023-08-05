@@ -20,14 +20,14 @@ return new class extends Migration
             $table->string('stazione_arrivo', 100);
             $table->date('data_partenza');
             $table->date('data_arrivo');
-            $table->timestamps('orario_partenza');
+            $table->timestamp('orario_partenza');
             $table->time('orario_arrivo');
             $table->string('codice_treno', 7);
             $table->integer('n_carrozze');
-            $table->boolean('in_orario');
+            $table->boolean('in_orario')->default(false);
             $table->time('ritardo')->nullable();
-            $table->boolean('cancellato');
-            $table->timestamp();
+            $table->boolean('cancellato')->default(false);
+            $table->timestamps();
         });
     }
 
